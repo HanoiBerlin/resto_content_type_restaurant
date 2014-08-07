@@ -60,6 +60,64 @@ function resto_content_type_restaurant_field_default_field_instances() {
     ),
   );
 
+  // Exported field_instance: 'node-resto_restaurant-field_geofield'
+  $field_instances['node-resto_restaurant-field_geofield'] = array(
+    'bundle' => 'resto_restaurant',
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'checkout_pane' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'default' => array(
+        'label' => 'hidden',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 5,
+      ),
+      'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'ds_extras_field_template' => '',
+    'entity_type' => 'node',
+    'field_name' => 'field_geofield',
+    'label' => 'Geofield',
+    'required' => 1,
+    'settings' => array(
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'geocoder',
+      'settings' => array(
+        'delta_handling' => 'default',
+        'geocoder_field' => 'field_restaurant_address',
+        'geocoder_handler' => 'google',
+        'handler_settings' => array(
+          'google' => array(
+            'all_results' => 0,
+            'geometry_type' => 'point',
+            'reject_results' => array(
+              'APPROXIMATE' => 0,
+              'GEOMETRIC_CENTER' => 0,
+              'RANGE_INTERPOLATED' => 0,
+              'ROOFTOP' => 0,
+            ),
+          ),
+        ),
+      ),
+      'type' => 'geocoder',
+      'weight' => 36,
+    ),
+  );
+
   // Exported field_instance: 'node-resto_restaurant-field_restaurant_address'
   $field_instances['node-resto_restaurant-field_restaurant_address'] = array(
     'bundle' => 'resto_restaurant',
@@ -83,7 +141,7 @@ function resto_content_type_restaurant_field_default_field_instances() {
         'weight' => 0,
       ),
       'default' => array(
-        'label' => 'above',
+        'label' => 'hidden',
         'module' => 'addressfield',
         'settings' => array(
           'format_handlers' => array(
@@ -210,7 +268,7 @@ function resto_content_type_restaurant_field_default_field_instances() {
         'weight' => 0,
       ),
       'default' => array(
-        'label' => 'above',
+        'label' => 'hidden',
         'module' => 'image',
         'settings' => array(
           'image_link' => '',
@@ -342,6 +400,7 @@ function resto_content_type_restaurant_field_default_field_instances() {
   t('Address');
   t('Body');
   t('Contact');
+  t('Geofield');
   t('Images');
   t('Opening hours');
 
